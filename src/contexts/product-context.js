@@ -8,9 +8,8 @@ const ProductContextProvider = (props) => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        setProducts(storageProducts)
+        if(storageProducts) setProducts(storageProducts)
     }, [])
-    
 
     const addProduct = (product) => {
         setProducts([...products, product])
